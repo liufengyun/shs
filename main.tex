@@ -1,0 +1,42 @@
+% \documentclass[12pt]{ociamthesis}  % default square logo
+\documentclass[12pt]{article}  % default square logo
+
+\usepackage[margin=2.8cm]{geometry}
+\usepackage{setspace}
+\usepackage{mathptmx} % Times font
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{framed}
+
+\onehalfspacing
+
+%end the preamble and start the document
+\begin{document}
+
+\input{content/cover}
+%% \include{content/dedication}        % include a dedication.tex file
+%% \include{content/acknowlegements}   % include an acknowledgements.tex file
+\include{content/abstract}          % include the abstract
+
+\pagenumbering{Roman}
+\tableofcontents            % generate and include a table of contents
+% \listoffigures              % generate and include a list of figures
+
+\pagenumbering{arabic}
+%now include the files of latex for each of the chapters etc
+\include{content/chapter1}
+\include{content/chapter2}
+\include{content/conclusions}
+
+%now enable appendix numbering format and include any appendices
+%% \appendix
+%% \include{content/appendix1}
+
+%next line adds the Bibliography to the contents page
+\addcontentsline{toc}{chapter}{Bibliography}
+%uncomment next line to change bibliography name to references
+%\renewcommand{\bibname}{References}
+\bibliography{refs}        %use a bibtex bibliography file refs.bib
+\bibliographystyle{plain}  %use the plain bibliography style
+
+\end{document}
