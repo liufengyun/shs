@@ -7,7 +7,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{framed}
-
+\usepackage{hyperref}
 \onehalfspacing
 
 %end the preamble and start the document
@@ -24,6 +24,9 @@
 
 \pagenumbering{arabic}
 %now include the files of latex for each of the chapters etc
+\include{content/introduction}
+\include{content/chapter3}
+\include{content/chapter4}
 \include{content/chapter1}
 \include{content/chapter2}
 \include{content/conclusions}
@@ -33,7 +36,7 @@
 %% \include{content/appendix1}
 
 %next line adds the Bibliography to the contents page
-\addcontentsline{toc}{chapter}{Bibliography}
+\addcontentsline{toc}{section}{Bibliography}
 %uncomment next line to change bibliography name to references
 %\renewcommand{\bibname}{References}
 \bibliography{refs}        %use a bibtex bibliography file refs.bib
