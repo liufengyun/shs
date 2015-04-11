@@ -1,62 +1,175 @@
-\section{Examination of Existing Definitions}
+\section{Free Will Is Creative}
 
-Free will is an eternal topic in philosophy. Throughout history, philosophers have proposed many different definitions of free will. Here let’s examine the most influential definitions as they must be the best ones that the intelligence of human beings could have achieved.
+The philosopher Jean-Paul Sartre has a famous quote saying that \emph{man is condemned to be free}. For Sartre and many other philosophers, free will seems to be a magic power, once owned by an agent, can be exerted on any matters of affair. According to this view, free will is an inexhaustible static asset for agents. I'll argue in this section that free will is not a static asset, but a dynamic asset. Free will is not universal money that can buy things everywhere, but coupons that must be used at the corresponding stores.
 
-\subsection{Ability to Choose on the Basis of One's Desires}
+\subsection{The Myth of Choice}
 
-Philosophers like Thomas Hobbes and David Hume think that free will is \emph{the ability to select a course of action as a means of fulfilling some desire}. Hobbes put it in \emph{Leviathan}(Chapter XXI):
+The dominant view among philosophers is to regard free will as the capacity to choose, as reflected by the popular formulation of free will as \emph{the capacity to do otherwise}. We can see the traces of this view in all debates about free will. It's the view advocated by libertarians, but also the view that compatibilists are struggling with. I call this view \emph{the myth of choice}. If we were able to break this myth, then we would fundamentally change how people will debate and talk about free will in future. This is the task I'm going to undertake here.
+
+In the beginning of this paper, we've seen an example where you can decide freely on whether to give the coin in your pocket to the street artist or not. It seems that each choice is at your disposal, it's completely to you to decide. For both traditional philosophers and ordinary people, this feel of ability to make free choice seems to be essential to the concept of free will.
+
+First, I'd like to say, \emph{free will is not hesitation}. When you can't decide between two choices, you don't know what to do next, you feel unease about the uncertainty, you want to get out of the situation. You linger on one choice, while looking at the other. You intend to decide on one, but you hesitate. You swing like a pendulum between the two choices. This is a trouble instead of freedom!
+
+Some might question: doesn't the ability to hesitate exhibit free will? If hesitation reflects free will, then we can write a simple program to exhibit free will as well:
+
+\begin{lstlisting}[language=Scala]
+  def hesitate(opt1, opt2) = {
+    if (opt1 betterThan opt2)
+       choose(opt1)
+    else
+       hesitate(opt2, opt1)
+  }
+\end{lstlisting}
+
+In the code snippet above, we define a function \emph{hesitate}, which takes two choices \emph{opt1} and \emph{opt2} as parameter. If the first option is better than the second option, it chooses the first. Otherwise, it recursively calls itself by reversing the parameters. If we feed two options of which one is better, the program will choose the better one and terminate. However, if we feed two options that are equally better, the program never terminates -- it hesitates between the two options!
+
+If we think it doesn't make sense to attribute free will to the program above, then it also doesn't make sense to think that hesitation exhibits free will.
+
+Second, \emph{free will is not randomness}. When facing two equally good choices, we often resort to the strategy of random choice. Resorting to random choice doesn't necessarily mean resort to a true random process in the physical world. It just means to give up our right to decide, and let external forces -- which we can't predict the result -- to decide. As we are passive and determined by external forces when we resort to randomness in decision, so the process doesn't reflect free will at all.
+
+One may disagree on one point: isn't the act of resorting to randomness in case of equally good choices an exhibition of free will? Maybe, but the ability can also be implemented by a simple program:
+
+\begin{lstlisting}[language=Scala]
+  def decide(opt1, opt2) = {
+    if (opt1 betterThan opt2)
+       choose(opt1)
+    else if (opt2 betterThan opt1)
+       choose(opt2)
+    else
+       choose(random(opt1, opt2))
+  }
+\end{lstlisting}
+
+In the code snippet above, we define a function \emph{decide}, which chooses the best one if the two choices are not equally good. Otherwise, it calls a random process to randomly choose one. Note that the \emph{random} method doesn't have to be real random, it could be just pseudo-random.
+
+Is it possible for any conception of free will be deviant from the program regarding the capacity to choose? I can hardly imagine any. First, the decision process should be rational to some extent, i.e. to choose the better choice, or it doesn't qualify the name of free will. We never attribute free will to a man who decides irrationally. Instead in such cases we doubt if the person has some psychological disorder. The rational decision process will generate a unique result as long as there's only one best answer. Second, in case there are more than one best answers, the decision process should choose one randomly, to avoid the paradox of Buridan's ass\footnote{\url{http://en.wikipedia.org/wiki/Buridan's_ass}}, where a rational horse starves to death in front of two stacks of hay.
+
+As I've showed above, there's nothing interesting about the capacity to choose. It's this myth of choice that misled philosophers for more than thousand years. It's time to give up this myth of free will.
+
+\subsection{It's About Choices, Not Choice}
+
+To break a myth is not enough, we have to replace it with another one. Next I'm going to argue that it's not the capability to choose but the capability to generate choices that matters.
+
+Nearly all definitions of free will begin with the situation where the agent is about to make a choice. Some philosophers emphasize the ability to make a different choice, some emphasize the alignment between choice and action.
+
+But making a choice is not the primitive situation we face in daily lives. In the real world, we first face a problem, then we generate candidate choices for decisions. We've seen the capacity to decide is not interesting at all, and we hesitate to say it exhibits free will. Then the only possibility lies with the choices. The more creative we are, the better choices can be generated and decided, thus more free we are. Free will is first and foremost a problem related to \emph{creativity}. It's about choices, not choice!
+
+From a linguistic point of view, what past philosophers care about is the adverb which modifies the verb in following sentence:
 
 \begin{quote}
-A FREE-MAN, is he, that in those things, which by his strength and wit he is able to do, is not hindred to doe that he has a will to ... from the use of the word Free-will, no Liberty can be inferred of the will, desire or inclination, but the Liberty of the man; which consisteth in this, that he finds no stop in doing what he has the will, desire or inclination to doe.
+  The agent \emph{freely} decided on one among the three options.
 \end{quote}
 
-David Hume wrote in \emph{An Enquiry Concerning Human Understanding}(part 1):
+Instead, the approach I advocate in this paper would rewrite the sentence and emphasize the \emph{options} part:
 
 \begin{quote}
-By liberty, then, we can only mean a power of acting or not acting, according to the determinations of the will; this is, if we choose to remain at rest, we may; if we choose to move, we also may.
+  The agent decided on the best one among \emph{the three options he created}.
 \end{quote}
 
-There are two problems with this definition. First, it depends on the mental concept desire which we want to avoid according to the second condition of the criteria. Second, with the definition, we would be able to attribute free will to ants and chickens, which is in conflict with our  intuitions. We need a way to distinguish human beings from ants and chickens in terms of free will. Chickens and ants can choose based on their desires, but it seems they can’t deliberate on the choices.
+Note that in the rewriting, \emph{freely} is removed while \emph{best} is added. This corresponds to the conclusion in previous section that the capacity to choose doesn't quality the name of free will and the decision process should be rational to choose the best option.
 
-\subsection{Ability to Choose on the Basis of One’s Desires and Values}
+If the three options are indeed created by the agent himself, the rewriting literally means the same thing. If the three options are provided by third parties, we need more complex rewriting. When we face choices provided by third parties, it's first and foremost a problem(not choice), and second a problem related to choice. We can generate different choices in order to solve the choice problem. We have to decide on one choice we generated in order to decide on the choice problem.
 
-Timothy(2010) suggests an improvement to the previous definition that free will is \emph{the ability to deliberately choose on the basis of one’s desires and values}. Obviously, this definition is closer to our intuitions, and now we would be unable to attribute free will to ants and chickens.
-
-However, in respect to the second condition of the criteria, this definition is worse, as it now additionally depends on some mental process with the usage of the word \emph{deliberatively}. And the word values here should be understood as a kind of \emph{value} beliefs, thus it further complicates the definition.
-
-Another problem with the definition is that we can’t easily verify in a specific scenario whether an action is deliberate or not from a third-person perspective. However, this is not a difficulty in principle, as the agent can report the deliberation openly.
-
-Timothy(2010) pointed out that a worry with this definition is that there are agents who deliberately choose to act as they do but who are motivated to do so by a compulsive, controlling sort of desire. For example, we can imagine following scenario:
+For example, John receives two offers from two universities, he has to decide which one to decline. He would generate two choices in order to decide on the choice problem:
 
 \begin{quote}
-There are two groups A and B who have feuds between them. And the children raised up in each group are instilled with hatred of the other group. Suppose one day a child X of group A encountered a child Y of group B, who is yelling for help in the water. X, being a good swimmer, thinks that Y is a member of the enemy group, so he chosed to be deaf to the cry and Y drowned.
+(1) Choose the university which has the top overall ranking \\
+(2) Choose the university which has the top specialty ranking
 \end{quote}
 
-It’s obvious that the desires and beliefs of X are determined by his upbringing. Can we think that X is free? Different from Timothy(2010), I think yes, X is still free. However, to what extent should we blame X is another thing. Being raised up with bad values is like acting with false information or with important information missing. We’re still free even if we did something wrong due to false information or due to missing information, though the extent to which we should be blamed will be different. This is consistent with our intuitions.
+After generating the two choices, John decided on the second one, because he's persuaded by his father that the ranking of specialty is more important than school. Then, he would be able to choose a university by the criteria he has chosen.
 
-\subsection{The Ability to Do Otherwise}
+It's obvious that the quality of the decision mainly depends on the quality of the choices that are generated. The better choices we can generate, the greater chance we can make a better decision. If we move the focus of free will from the capacity to choose to the capacity to generate choices, we see a very different scenery. It would cast new light in the understanding of free will and reshape future debates about free will.
 
-According to Timothy(2010), some philosophers succinctly characterize free will as \emph{the ability to do otherwise}. However, this definition suffers from multiple interpretations.
+To make the discussion more concrete, let me first put forward a new definition of free will formally:
 
-Compatiblists tend to provide a conditional interpretation. The general idea of the conditional interpretation is that I would do otherwise if it were the case that … , where the ellipsis is filled by a different fact than what was actually the case. This interpretation can’t prevent us from attributing free will to chickens and ants, thus conflicts with our intuitions.
+\begin{quote}
+\emph{Free will} is the ability to creatively generate action plans and choose one rationally with respect to a specific objective in a concrete scenario.
+\end{quote}
 
+This definition doesn't sound as good as \emph{free will is creative}, but in spirit they are the same. In the following, I'll analyze this new definition in details.
 
-However, incompatiblists think that \emph{the ability to do otherwise} requires something stronger -- the \emph{actual possibilities} that were open to me without supposing a different condition in the environment. This interpretation is still somewhat obscure, what do actual possibilities mean? If we’re destined to prefer some choice over others, then there are no actual possibilities at all. So actual possibilities can only be chosen without preference. However, we know the thought experiment that a rational horse would starve to death if there are two grasses in front of him with equal distance. Even if we do randomly choose one, then can we say that a random choice is free? In such cases, we will be unable to differentiate a deliberative random choice from a lucky(non-deliberative) random choice.
+\subsection{Creativity}
 
-Another problem with the definition is that it’s difficult to check whether an agent has the ability to do otherwise or not in a specific scenario, as least the definition does not state explicitly how to perform such checks.
+The definition depends on the concept \emph{action plan}, which is a list of actions to be executed in order to achieve a specific objective in a concrete scenario. When facing a problem, each action plan is a choice. Action plan is relative to the objective, each action in the action plan can also be an objective for sub-action plans. For example, suppose visit Paris is an action plan for having a good holiday. In turn, go to Paris by train is a possible step of an action plan for visiting Paris.
 
-\subsection{Frankfurt’s Second-Order Desire}
+The interplay between action plan and objective can be very complex. When we are faced with a problem, to solve this problem is not what I mean by \emph{objective}. Objective means what the agent can gain from solving the problem. Take the previous example of going to university, what's the objective? I can imagine a few:
 
-Frankfurt makes two distinctions of desires. First, he distinguish \emph{effective} desires from \emph{non-effective} desires. An effective desire is one that actually issues in action. For example, if you wants to visit Paris, if you do go to visit Paris, then that’s an effective desire. Frankfurt identifies a person’s \emph{will} with their \emph{effective desires}.
+\begin{quote}
+(1) Receive a good education in the field of interest \\
+(2) Receive a good general education \\
+(3) Have a good job in future \\
+(4) Have a good life in future(not only professional, but overall)
+\end{quote}
 
-Second, he distinguish \emph{first-order desires} from \emph{second-order desires}. A first-order desire is a desire for anything other than a desire; a second-order desire is a desire for a desire. For example, you might have a first-order desire to contact your ex-girlfriend, and also a second-order desire that you desire not to contact your ex-girlfriend. When a person does want the first order desire to be effective, when they want it to be their will, Frankfurt calls this a \emph{second-order volition}.
+As you can see, there are means and end relationship between the objectives -- for example, \emph{receive a good education in the field of interest} can be seen as a means to \emph{have a good job in the future}. Then how do we fix one objective in order to make a decision? This is actually a very creative process. First, it's reasonable to assume that each agent has some values, or it's impossible for the agent to make any reasonable decisions. The creative process is try to create a network of bridge the original problem with the values, as illustrated in the following graph:
 
-Then he distinguish two concepts \emph{freedom of action} and \emph{freedom of  will}. He thinks that a person’s actions are free in so far as they stem from their desires; that is, if they had desired differently, they would have acted differently. This definition is very close to that of Thomas Hobbes and David Hume, but for Frankfurt this is merely freedom of action. Freedom of will requires something more. He proposes that \emph{a person has free will just in case they have second-order volitions, and they can bring their first order desires into line with them}.
+\begin{center}
+  \tikzstyle{line} = [draw, -latex']
 
-Frankfurt thinks that non-human animals and children don’t have second-order volitions, thus they only have free actions, but don’t have free will. Normal persons have second-order volitions, and they can control their desires, thus they have free will. A drug addict does not have free will, because his second-order volitions can’t control his effective desires.
+  \begin{tikzpicture}[every node/.style={draw, font=\small, text centered, rounded corners, node distance=3cm}, choice/.style={circle, draw}]
+    \node  (problem1) {Problem 1};
+    \node [choice, fill=red, above right of=problem1] (1a) {1};
+    \node [choice, right of=problem1] (1b) {2};
+    \node [choice, below right of=problem1] (1c) {3};
+    \node [right of=1b] (problem2) {Problem 2};
+    \node [choice, above right of=problem2] (2a) {4};
+    \node [choice, fill=red, below right of=problem2] (2c) {5};
+    \node [below right of=2a] (problem3) {Problem 3};
+    \node [choice, right of=problem3] (o3) {Values};
 
-One obvious drawback of Frankfurt’s definition is that it depends on the mental concept desire which we want to avoid as discussed in the second criterion.
+    \path [line] (problem1) -- (1a);
+    \path [line] (problem1) -- (1b);
+    \path [line] (problem1) -- (1c);
 
-Another worry with Frankfurt’s definition is, why stop with second-order? Why not third-order, fourth-order, or whatever? Can we say that one’s free if his highest-order desire is effective?
+    \path [line] (1a) -- (problem2);
+    \path [line] (1b) -- (problem2);
+    \path [line] (1c) -- (problem2);
 
-What if a person’s desires at all levels are implanted? Is the person still free? Frankfurt would say yes, but it’s disputable. And it seems unlikely to settle the dispute unless we arrive at an indisputable concept of desire. So I think that Frankfurt’s definition, though insightful, is far from satisfactory.
+    \path [line] (problem2) -- (2a);
+    \path [line] (problem2) -- (2c);
+
+    \path [line] (2a) -- (problem3);
+    \path [line] (2c) -- (problem3);
+
+    \path [line] (problem3) -- (o3);
+  \end{tikzpicture}
+\end{center}
+
+In the graph above, in order to solve the first problem, we generate three options, which in turn becomes a problem itself. To solve the second problem, we generate two options. Now the third problem can be solved using the values of the agent as objective, we suppose the option 5 is chosen. In turn, the option 5 can serve as an objective for problem 2, so the option 1 is chosen -- that's how the first problem is solved. In reality, the graph construction process may begin from both ends in order to bridge the original problem with values of the agent. The intermediate options generated depends on the agent's beliefs, skills, environment, etc, it's a very creative process.
+
+Human beings can profit their linguistic capabilities to generate action plans creatively. The simplest method is to negate a sentence. For example, from \emph{visit Paris} we can get \emph{don’t visit Paris}. Substitution is also a widely used technique. For example, instead of going to visit Paris, one may go to Geneva. The natural language is a huge source of creativity in generating action plans.
+
+Note that the quality of action plans matters more than the quantity. The quality of an action plan is determined by how well it can achieve the specific objective in the concrete scenario. For example, if you want to go from Geneva to Paris in the shortest delay, there are a lot of transportation possibilities, among them one is the best. A person generating the best action plan is more creative than the person who can’t, even though the latter might generate more but lower quality plans. However, in many scenarios, quantity matters as well, as only through comparison we can be sure if a choice is optimal or not. Shopping is a typical example.
+
+According to the new definition, free will is creative -- the better action plans are, more free the agent is. The creativity of agents varies in degrees. A person is more creative than a child or a dog in how to get the banana which they can’t reach. A chess program is usually more creative than a chess master in generating alternative plans, though they generate plans by completely different processes. A poet is more creative than a computer in writing poems.
+
+The definition also implies that free will comes in degrees. In the same scenario with the same objective, the agent who can generate and decide on better action plan is more free than the other one.
+
+This definition implies free will can be improved. If an agent is able to learn to generate better action plans, it will become more free. It’s consistent with our intuitions, and can easily provide an answer to the question \emph{when does a child have free will}. A chess program that can learn from failures to generate better action plans in future will become more and more free. Does this mean free will is a synonym of intelligence? To some extent, I admit the two concepts are closely related. However, as intelligence is an obscure concept to be defined, I will not pursue the topic here.
+
+\subsection{Thematicity}
+
+Free will is not a universal currency that can be used everywhere, it's more like tickets which can be used at specific places.
+
+Talk of free will should be restricted to a proper topic. The correct grammar for talking about free will is \emph{X exhibits free will in T}. The topic T can’t be omitted, or the sentence is incomplete and incomprehensible unless T is implicit in the context. For example, chess program exhibits free will in playing chess games, but not in speaking english. A child exhibits free will in movements of one’s body(mouth, hand, foot, etc), but not in the circulation of blood, digestion or cell fission. However, a doctor may exhibit free will in circulation of blood, digestion and even cell fission by employing his professional knowledge to make plans to tune the functioning of his body. A musician may  exhibit free will in music composition, but a man who doesn’t know music at all can’t.
+
+Free will is not a nature of human beings, but a nurture. The more one learns on a topic, the more creative thus more free he would be on the topic. If one doesn't know anything about a topic, he would not be very different from a cow attending a concert. Millionaires are never respected by artists just because they buy and sell masterpieces of art.
+
+For human beings, it's impossible for one to be an expert on all the topics he faces in life. So we delegate health to doctors, social issues to politicians, education of child to schools, etc. However, there is one thing we can't delegate, that's how to spend the whole life. If we just follow the prototypical life roads of the public opinion, we're not showing any free will on the topic of life, even though we are very successful in our professions. To be more free in one's life, we have to learn how to be more creative in life choices.
+
+\subsection{Rationality}
+
+As I argued before, the capacity to decide can't be irrational, or it doesn't qualify the name of free will. However, there’s a weakness here because the rationality of different agents may vary in degrees, far from being perfect. Generally, if we can justify the decision of an agent with respect to the specific objective in the concrete scenario based on the history of the agent, then we can say that the agent decides rationally.
+
+However, generate action plans and choose rationally don’t necessarily imply that free will involves deliberative processes. The process may also be consciousless computations. For example, a chess program can also generate action plans internally and choose the best one in a concrete scenario in order to win the chess.
+
+\subsection{Summary}
+
+In this section, based on the critique of \emph{the myth of choice}, I propose that it's the capacity to generate choices instead of the capacity to decide which is important to free will. Then I put forward a new definition of free will, which is creative, varies in degrees and can be improved if the agent's creativity can be improved.
+
+% One question I don't touch in this chapter nor I'll in this paper is, whether the new conception of free will is compatible with respect to determinism or indeterminism. I'll safely leave the question for later investigations, as whether the new conception of free will is acceptable or not doesn't depend on the answer to this question. Nevertheless, I believe the new conception of free will would incur less metaphysical disputes, and it's very promising to be compatible with indeterminism.
+
+In the next section, I'm going to discuss possible attacks on the new conception of free will and respond to them.
+
+% we can still be held as responsible if our creativity or rationality can be improved. The
