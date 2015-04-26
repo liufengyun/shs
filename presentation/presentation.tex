@@ -173,11 +173,11 @@
   \frametitle{Rationality Is Not A Mysterious Capacity}
 
   \begin{lstlisting}[language=Scala]
-    def decide(opt1, opt2) = {
-      if (opt1 betterThan opt2)
-          choose(opt1)
-      else if (opt2 betterThan opt1)
-          choose(opt2)
+    def decide(A, B) = {
+      if (A betterThan B)
+          choose(A)
+      else if (B betterThan A)
+          choose(B)
       else
           ...
     }
@@ -186,7 +186,11 @@
 
 \begin{frame}[fragile]
   \frametitle{Free Will Is Not Hesitation}
-  If A and B are seemingly equally good, then you're in trouble!
+  %% If A and B are seemingly equally good, then you're in trouble!
+
+  \begin{center}
+    \alert{\Large{Hesitation = Being Trapped}}\\[0.1cm]
+  \end{center}
 
   \begin{figure}
     \centering
@@ -197,6 +201,10 @@
 
 \begin{frame}[fragile]
   \frametitle{Free Will Is Not Hesitation}
+  \begin{center}
+    \alert{\Large{Hesitation = Inability}}\\[0.1cm]
+  \end{center}
+
   Two seemingly equally good choices may not be equal in fact, it's only that you are unable to differentiate them.\\[0.5cm]
 
   Hesitation is usually a reflection of \alert{inability} to decide efficiently, where you need help from experts -- more experienced and informed people in the field, or you need more training in the field.
@@ -206,20 +214,23 @@
   \frametitle{Hesitation Is Not A Mysterious Capacity}
 
   \begin{lstlisting}[language=Scala]
-    def decide(opt1, opt2) = {
-      if (opt1 betterThan opt2)
-          choose(opt1)
-      else if (opt2 betterThan opt1)
-          choose(opt2)
+    def decide(A, B) = {
+      if (A betterThan B)
+          choose(A)
+      else if (B betterThan A)
+          choose(B)
       else
-          decide(opt2, opt1)
+          decide(B, A)
     }
   \end{lstlisting}
 \end{frame}
 
 \begin{frame}[fragile]
   \frametitle{Free Will Is Not Randomness}
-  If you resort to randomness, you are giving up free will!
+  %% If you resort to randomness, you are giving up free will!
+  \begin{center}
+    \alert{\Large{Randomness = Giving Up Control}}\\[0.1cm]
+  \end{center}
 
   \begin{figure}
     \centering
@@ -229,11 +240,16 @@
 
 \begin{frame}[fragile]
   \frametitle{Free Will Is Not Randomness}
+
+  \begin{center}
+    \alert{\Large{Randomness = Try Luck = Inability}}\\[0.1cm]
+  \end{center}
+
   Resorting to randomness to try luck implies you are aware that the two choices are very likely to be unequal, but unable to differentiate them.\\[0.3cm]
 
   Failure to differentiate the better choice and resorting to randomness \alert{unnecessarily} is a reflection of \alert{inability}.\\[0.3cm]
 
-  Resorting to randomness doesn't mean some real random process in the world, it only means you let yourself to be determined by external forces that you can't predict.
+  %% Resorting to randomness doesn't mean some real random process in the world, it only means you let yourself to be determined by external forces that you can't predict.
 \end{frame}
 
 
@@ -241,13 +257,13 @@
   \frametitle{Randomness Is Not A Mysterious Capacity}
 
   \begin{lstlisting}[language=Scala]
-  def decide(opt1, opt2) = {
-    if (opt1 betterThan opt2)
-       choose(opt1)
-    else if (opt2 betterThan opt1)
-       choose(opt2)
+  def decide(A, B) = {
+    if (A betterThan B)
+       choose(A)
+    else if (B betterThan A)
+       choose(B)
     else
-       choose(random(opt1, opt2))
+       choose(random(A, B))
   }
   \end{lstlisting}
 \end{frame}
@@ -314,6 +330,15 @@
   \end{figure}
 \end{frame}
 
+%% \begin{frame}[fragile]
+%%   \frametitle{Language is a Source of Human Creativity}
+
+%%   Human beings can profit their linguistic capability to generate choices:
+%%   \begin{itemize}
+%%   \item{Negation}: Negate a sentence
+%%   \item{Substitution}: Replace nouns with nouns, number with numbers, etc
+%%   \end{itemize}
+%% \end{frame}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
