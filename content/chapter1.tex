@@ -12,45 +12,70 @@ The dominant view among philosophers is to regard free will as the capacity to c
 
 In the beginning of this paper, we've seen an example where you can decide freely on whether to give the coin in your pocket to the street artist or not. It seems that each choice is at your disposal, it's completely up to you to decide. For both traditional philosophers and ordinary people, this feel of ability to make free choice seems to be essential to the concept of free will.
 
-First, I'd like to say, \emph{free will is not hesitation}. When you can't decide between two choices, you don't know what to do next, you feel unease about the uncertainty, you want to get out of the situation. You linger on one choice, while looking at the other. You intend to decide on one, but you hesitate. You swing like a pendulum between the two choices. This is a trouble instead of freedom!
+First of all, intuition is by no means the criteria of correctness. Every human being living on earth has strong intuition that the earth is flat, but it's not true. Our intuition of free choice might just be an illusion. As it's widely known, philosophers working intentions and actions, psychologists working on subconsciousness, physiologists working on mental disorders have already greatly weakened our intuitions of free choice.
 
-Some might question: doesn't the ability to hesitate exhibit free will? If hesitation reflects free will, then it's possible to write a simple program that exhibits free will as well:
+Second, free will is not irrationality. In another word, free will is rational. It means you can't choose either A or B, you should choose the better one. If you deliberately choose the suboptimal choice, we'll not say you have free will, instead we suspect if you have some mental problems.
+
+You might ask, does rationality reflect free will? To answer this question, let's see a short program.
 
 \begin{lstlisting}[language=Scala]
-  def hesitate(opt1, opt2) = {
-    if (opt1 betterThan opt2)
-       choose(opt1)
+  def decide(A, B) = {
+    if (A betterThan B)
+      choose(A)
+    else if (B betterThan A)
+      choose(B)
     else
-       hesitate(opt2, opt1)
+      ...
   }
 \end{lstlisting}
 
-In the code snippet above, we define a function \emph{hesitate}, which takes two choices \emph{opt1} and \emph{opt2} as parameter. If the first option is better than the second option, it chooses the first. Otherwise, it recursively calls itself by reversing the parameters. If we feed two options of which one is better, the program will choose the better one and terminate. However, if we feed two options that are equally better, the program never terminates -- it hesitates between the two options!
+As you can see in this program, the method \emph{decide} chooses between A and B, and it's obvious that it always chooses the better one. We have to admit the program is rational, because it always makes the better choice. Does it make sense to attribute free will to such a simple mechanism? I think this capability is too trivial to qualify the name free will.
+
+Third, \emph{free will is not hesitation}. When you can't decide between two choices, you don't know what to do next, you feel unease about the uncertainty, you want to get out of the situation. You linger on one choice, while looking at the other. You intend to decide on one, but you hesitate. You swing like a pendulum between the two choices. This is a trouble instead of freedom!
+
+This insight is also captured by the \emph{Paradox of Buridan's Ass}\footnote{\url{http://en.wikipedia.org/wiki/Buridan's_ass}}, which was first put forward by a 14th century French philosopher Jean Buridan. The paradox says that if there are two stacks of hay in front of a rational ass with equal distance, then the rational ass would starve to death as it can't decide which stack of hay to eat. In this case, hesitation is a synonym of being trapped, how can we say being trapped is an exhibition of free will?
+
+From a different respect, two equally good choices might not be equal in fact, it's only that you can't tell one from the other. So in this regard, hesitation is usually a reflection of inability to decide efficiently. In such cases, you need help from experts or you need more training in the field.
+
+If you think hesitation as some capacity that qualifies the name of free will, following program will help you to get rid of the idea.
+
+\begin{lstlisting}[language=Scala]
+  def decide(A, B) = {
+    if (A betterThan B)
+      choose(A)
+    else if (B betterThan A)
+      choose(B)
+    else
+      decide(B, A)
+  }
+\end{lstlisting}
+
+In the program, if A and B are not equally good, then the better one is decided. If A and B are equally good, then the decide function would run forever -- that's to hesitate forever. This capacity is too trivial to qualify the name of free will.
 
 % Some may object that the hesitation of a program is not true hesitation, because the program doesn't really understand the choices it's going to make. Now let's imagine there exists an agent, which understands the consequences of each choice, but doesn't have any desires, objectives or values at all.
 
-If it doesn't make sense to attribute free will to the program above, then it also doesn't make sense to think that hesitation exhibits free will.
+Fouth, \emph{free will is not randomness}. When facing two equally good choices, we often resort to the strategy of random choice. Resorting to random choice doesn't necessarily mean resort to a true random process in the physical world. It just means to give up our control, and let external forces -- which we can't predict the result -- to decide. As we are passive and determined by external forces when we resort to randomness in decision, so the process doesn't reflect free will at all.
 
-Second, \emph{free will is not randomness}. When facing two equally good choices, we often resort to the strategy of random choice. Resorting to random choice doesn't necessarily mean resort to a true random process in the physical world. It just means to give up our right to decide, and let external forces -- which we can't predict the result -- to decide. As we are passive and determined by external forces when we resort to randomness in decision, so the process doesn't reflect free will at all.
+On the other hand, most cases of resorting to randomness in daily lives imply that you want to try your luck, which in turn implies you are aware that the two choices are most likely not equal, but you are unable to differentiate them. So most cases of resorting to randomness reflect the inability to choose. It's unreasonable to call this inability free will.
 
 One may disagree on one point: isn't the act of resorting to randomness in case of equally good choices an exhibition of free will? Maybe, but the ability can also be implemented by a simple program:
 
 \begin{lstlisting}[language=Scala]
-  def decide(opt1, opt2) = {
-    if (opt1 betterThan opt2)
-       choose(opt1)
-    else if (opt2 betterThan opt1)
-       choose(opt2)
-    else
-       choose(random(opt1, opt2))
-  }
+def decide(A, B) = {
+  if (A betterThan B)
+     choose(A)
+  else if (B betterThan A)
+     choose(B)
+  else
+     choose(random(A, B))
+}
 \end{lstlisting}
 
-In the code snippet above, we define a function \emph{decide}, which chooses the best one if the two choices are not equally good. Otherwise, it calls a random process to randomly choose one. Note that the \emph{random} method doesn't have to be real random, it could be just pseudo-random.
+As you can see in the program, if A and B are equally good, it would randomly choose one; otherwise, it would choose the better one.
 
-Is it possible for any conception of free will be deviant from the program regarding the capacity to choose? I can hardly imagine any. First, the decision process should be rational to some extent, i.e. to choose the better choice, or it doesn't qualify the name of free will. We never attribute free will to a man who decides irrationally. Instead in such cases we doubt if the person has some psychological disorder. The rational decision process will generate a unique result as long as there's only one best answer. Second, in case there are more than one best answers, the decision process should choose one randomly, to avoid the paradox of Buridan's ass\footnote{\url{http://en.wikipedia.org/wiki/Buridan's_ass}}, where a rational horse starves to death in front of two stacks of hay.
+Is it possible for any conception of free will be deviant from the program regarding the capacity to choose? I can hardly imagine any. First, the decision process should be rational to some extent, i.e. to choose the better choice, or it doesn't qualify the name of free will. The rational decision process will generate a unique result as long as there's only one best answer. Second, in case of truly equally good answers, the decision process should choose one randomly, to avoid the \emph{Paradox of Buridan's Ass}.
 
-As I've showed above, if we agree free will is not hesitation or randomness, then there's nothing left in the capacity to choose that can honor free will. It's not the capacity to choose that matters to free will, but something else. It's time to give up this myth of free will!
+As I've showed above, there's nothing left in the capacity to choose that can honor free will. It's time to declare the bankruptcy of the myth of choice. It's not the capacity to choose that matters to free will, but something else.
 
 \subsection{It's About Choices, Not Choice}
 
